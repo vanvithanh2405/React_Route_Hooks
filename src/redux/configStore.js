@@ -1,8 +1,8 @@
 import {combineReducers, createStore} from 'redux';
-
+import { AppChatReducer } from './AppChatReducer/AppChatReducer';
 
 const rootReducer  = combineReducers({
-    
+    AppChatReducer
 });
 
 

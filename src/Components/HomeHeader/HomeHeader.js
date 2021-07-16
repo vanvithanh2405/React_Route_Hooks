@@ -26,7 +26,22 @@ export default function HomeHeader(props) {
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/usestate">Use State</NavLink>
-                                <a className="dropdown-item" href="#">Action 2</a>
+                            
+                                <NavLink className="dropdown-item" to="/useeffect">Use Effect</NavLink>
+
+                                <NavLink className="dropdown-item" to="/demohookredux">Hook Redux</NavLink>
+                                
+                                
+                            </div>
+                        </li>
+
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">API</a>
+                            <div className="dropdown-menu" aria-labelledby="dropdownId">
+                                <NavLink className="dropdown-item" to="/apiclass">Api Class</NavLink>
+                            
+                                <NavLink className="dropdown-item" to="/apifunction">Api Function</NavLink>
+                                
                             </div>
                         </li>
                     </ul>
