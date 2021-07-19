@@ -13,6 +13,8 @@ import DemoUseEffect from './Pages/_Hooks/UseEffectDemo/DemoUseEffect';
 import ApiReactClass from './Pages/DemoAPI/ApiReactClass';
 import ApiFunction from './Pages/DemoAPI/ApiFunction';
 import DemoHookRedux from './Pages/_Hooks/HookRedux/DemoHookRedux';
+import Details from './Pages/Details/Details';
+import LoginFormik from './Pages/Login/LoginFormik';
 
 export default class App extends Component {
   render() {
@@ -25,18 +27,22 @@ export default class App extends Component {
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/loginform' component={LoginFormik} />
             <Route exact path='/profile' component={Profile} />
             
             
             <Route exact path='/usestate' component={UseStateDemo} />
             <Route exact path='/useeffect' component={DemoUseEffect} />
+            
 
+            <Route exact path='/detail/:id' component={Details}/>
             {/* Cài đặt API */}
             <Route exact path='/apiclass' component={ApiReactClass} />
             <Route exact path='/apifunction' component={ApiFunction} />
 
             {/* Hook Redux  */}
             <Route exact path='/demohookredux' component={DemoHookRedux}/>
+
 
             <Route exact path='/' component={Home} />
           </Switch>

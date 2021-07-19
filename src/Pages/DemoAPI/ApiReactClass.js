@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-export default class ApiReactClass extends Component {
+import { connect } from 'react-redux'
+import { LayDanhSachPhimAction } from '../../redux/action/QuanLyPhimAction'
+class ApiReactClass extends Component {
 
     state = {
         arrPhim : []
     }
 
     renderPhim = () => {
-        return this.state.arrPhim.map((phim,index)=>{
-            return <div className="col-4 mt-2">
+        return this.props.arrPhim.arrPhim.map((phim,index)=>{
+            return <div className="col-4 mt-2" key={index}>
                 <div className="card">
                     <img src={phim.hinhAnh} alt={phim.hinhAnh} />
                     <div className="card-body bg-dark text-white">
@@ -21,25 +23,8 @@ export default class ApiReactClass extends Component {
     }
 
     getApi = () => {
-        let promise = axios({
-            url:'http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01',
-            method:'GET'
-        });
-
-        // Xử lý thành công
-        promise.then((result)=>{
-            console.log('result',result.data)
-            // Sau khi lấy dữ liệu từ api trả về => đưa vào state thông qua hàm setState
-            this.setState({
-                arrPhim: result.data.content
-            })
-            
-        });
-
-        // Xử lí thất bại
-        promise.catch((error)=>{
-            console.log('error',error.response?.data)
-        })
+        const action = LayDanhSachPhimAction();
+        this.props.dispatch(action)
     }
 
     render() {
@@ -60,3 +45,10 @@ export default class ApiReactClass extends Component {
         this.getApi()
     }
 }
+
+
+const mapStateToProps = (state) => ({
+    arrPhim: state.QuanLyPhimReducer
+})
+
+export default connect(mapStateToProps)(ApiReactClass)

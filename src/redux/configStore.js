@@ -1,8 +1,12 @@
-import {combineReducers, createStore} from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { AppChatReducer } from './AppChatReducer/AppChatReducer';
+import { QuanLyPhimReducer } from './QuanLyPhimReducer/QuanLyPhimReducer';
 
-const rootReducer  = combineReducers({
-    AppChatReducer
+import reduxThunk from 'redux-thunk'
+
+const rootReducer = combineReducers({
+    AppChatReducer,
+    QuanLyPhimReducer
 });
 
 
@@ -17,6 +21,7 @@ const rootReducer  = combineReducers({
 
 */
 
-export const store = createStore(rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()    
+export const store = createStore(
+    rootReducer,
+    applyMiddleware(reduxThunk),
 );
