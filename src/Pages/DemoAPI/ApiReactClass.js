@@ -5,11 +5,11 @@ import { LayDanhSachPhimAction } from '../../redux/action/QuanLyPhimAction'
 class ApiReactClass extends Component {
 
     state = {
-        arrPhim : []
+        arrPhim: []
     }
 
     renderPhim = () => {
-        return this.props.arrPhim.arrPhim.map((phim,index)=>{
+        return this.props.arrPhim.arrPhim.map((phim, index) => {
             return <div className="col-4 mt-2" key={index}>
                 <div className="card">
                     <img src={phim.hinhAnh} alt={phim.hinhAnh} />

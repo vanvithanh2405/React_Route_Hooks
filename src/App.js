@@ -15,33 +15,44 @@ import ApiFunction from './Pages/DemoAPI/ApiFunction';
 import DemoHookRedux from './Pages/_Hooks/HookRedux/DemoHookRedux';
 import Details from './Pages/Details/Details';
 import LoginFormik from './Pages/Login/LoginFormik';
+import DemoHoc from './Pages/HOC/DemoHoc';
+import Modal from './Pages/HOC/Modal';
+import { HomeTemplate } from './Templates/HomeTemplate/HomeTemplate';
+import { UserTemplate } from './Templates/UserTemplate/UserTemplate';
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
         <BrowserRouter>
-          <HomeHeader />
+          
           <Switch>
-            <Route exact path='/home' component={Home} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/contact' component={Contact} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/loginform' component={LoginFormik} />
-            <Route exact path='/profile' component={Profile} />
             
             
-            <Route exact path='/usestate' component={UseStateDemo} />
-            <Route exact path='/useeffect' component={DemoUseEffect} />
-            
+            <HomeTemplate  path="/home" component={Home}/>
+            <HomeTemplate  path='/about' component={About} />
+            <HomeTemplate  path='/contact' component={Contact} />
+            <UserTemplate  path='/login' component={Login} />
 
-            <Route exact path='/detail/:id' component={Details}/>
+
+            <HomeTemplate exact path='/loginform' component={LoginFormik} />
+            <HomeTemplate exact path='/profile' component={Profile} />
+
+
+            <HomeTemplate exact path='/usestate' component={UseStateDemo} />
+            <HomeTemplate exact path='/useeffect' component={DemoUseEffect} />
+
+
+            <HomeTemplate exact path='/detail/:id' component={Details} />
+
+            <HomeTemplate exact path='/demohoc' component={DemoHoc} />
+
             {/* Cài đặt API */}
-            <Route exact path='/apiclass' component={ApiReactClass} />
-            <Route exact path='/apifunction' component={ApiFunction} />
+            <HomeTemplate exact path='/apiclass' component={ApiReactClass} />
+            <HomeTemplate exact path='/apifunction' component={ApiFunction} />
 
             {/* Hook Redux  */}
-            <Route exact path='/demohookredux' component={DemoHookRedux}/>
+            <HomeTemplate exact path='/demohookredux' component={DemoHookRedux} />
 
 
             <Route exact path='/' component={Home} />

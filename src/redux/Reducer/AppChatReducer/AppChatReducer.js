@@ -1,4 +1,4 @@
-import { ADD_COMMENT } from "../action/type/AppChatType";
+import { ADD_COMMENT } from "../../action/type/AppChatType";
 
 
 const stateDefault = {

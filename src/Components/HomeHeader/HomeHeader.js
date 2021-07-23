@@ -22,16 +22,20 @@ export default function HomeHeader(props) {
                             <NavLink className="nav-link" to="/login" activeClassName="bg-white text-dark" activeStyle={{ border: '1px solid red' }}>Login</NavLink>
                         </li>
 
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/demohoc" activeClassName="bg-white text-dark" activeStyle={{ border: '1px solid red' }}>DemoHOC</NavLink>
+                        </li>
+
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/usestate">Use State</NavLink>
-                            
+
                                 <NavLink className="dropdown-item" to="/useeffect">Use Effect</NavLink>
 
                                 <NavLink className="dropdown-item" to="/demohookredux">Hook Redux</NavLink>
-                                
-                                
+
+
                             </div>
                         </li>
 
@@ -39,9 +43,9 @@ export default function HomeHeader(props) {
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">API</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/apiclass">Api Class</NavLink>
-                            
+
                                 <NavLink className="dropdown-item" to="/apifunction">Api Function</NavLink>
-                                
+
                             </div>
                         </li>
                     </ul>

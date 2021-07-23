@@ -1,12 +1,14 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { AppChatReducer } from './AppChatReducer/AppChatReducer';
-import { QuanLyPhimReducer } from './QuanLyPhimReducer/QuanLyPhimReducer';
+import { AppChatReducer } from './Reducer/AppChatReducer/AppChatReducer';
+import { QuanLyPhimReducer } from './Reducer/QuanLyPhimReducer/QuanLyPhimReducer';
 
 import reduxThunk from 'redux-thunk'
+import { ModalReducer } from './Reducer/ModalReducer';
 
 const rootReducer = combineReducers({
     AppChatReducer,
-    QuanLyPhimReducer
+    QuanLyPhimReducer,
+    ModalReducer
 });
 
 
@@ -16,7 +18,7 @@ const rootReducer = combineReducers({
     Ví dụ có objectA
     objectA.thuocTinh = giá trị mới => không thay đổi (redux không biết được giá trị đó thay đổi => không render lại giao diện)
 
-    objectA = {}  =>gán = object mới
+    objectA = {}  => gán = object mới 
     objectA = {...objectA, thuocTinh:'giaTriMoi'}
 
 */
